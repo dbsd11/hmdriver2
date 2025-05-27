@@ -74,7 +74,10 @@ class RecordClient(HmClient):
         buffer = bytearray()
         while not self.stop_event.is_set():
             try:
-                buffer += self._recv_msg(decode=False, print=False)
+                msg = self._recv_msg(decode=False, print=False)
+                if msg == "":
+                    continue
+                buffer += msg
             except Exception as e:
                 print(f"Error receiving data: {e}")
                 break
