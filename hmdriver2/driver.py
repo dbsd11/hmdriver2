@@ -82,7 +82,7 @@ class Driver:
     def _invoke(self, api: str, args: List = []) -> HypiumResponse:
         return self._client.invoke(api, this="Driver#0", args=args)
 
-    def close():
+    def close(self):
         self.__del__()
 
     @delay
