@@ -82,6 +82,9 @@ class Driver:
     def _invoke(self, api: str, args: List = []) -> HypiumResponse:
         return self._client.invoke(api, this="Driver#0", args=args)
 
+    def close():
+        self.__del__()
+
     @delay
     def start_app(self, package_name: str, page_name: Optional[str] = None):
         """
